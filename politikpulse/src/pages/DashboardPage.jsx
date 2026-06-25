@@ -6,6 +6,7 @@ import QuestionAnalysis from '../components/dashboard/QuestionAnalysis'
 import CrossTableView   from '../components/dashboard/CrossTableView'
 import QRCodePanel      from '../components/dashboard/QRCodePanel'
 import ExportPanel      from '../components/dashboard/ExportPanel'
+import PasswordProtect from '../components/dashboard/PasswordProtect'
 
 const TABS = [
   { id: 'overview',   label: 'Übersicht',     icon: '📈', shortLabel: 'Übersicht' },
@@ -22,6 +23,7 @@ export default function DashboardPage() {
   const [error, setError]           = useState(null)
   const [lastRefresh, setLastRefresh] = useState(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [isUnlocked, setIsUnlocked] = useState(false)
   const navigate = useNavigate()
 
   const loadData = useCallback(async () => {
@@ -42,7 +44,9 @@ export default function DashboardPage() {
   useEffect(() => {
     loadData()
   }, [loadData])
-
+if (!isUnlocked) {
+  return <PasswordProtect onUnlock={() => setIsUnlocked(true)} />
+}
   return (
     <div className="min-h-screen bg-slate-100 flex">
       {/* Sidebar Overlay (Mobile) */}
