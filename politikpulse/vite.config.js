@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // Beispiel: Wenn dein Repo 'meine-umfrage' heißt → base: '/meine-umfrage/'
 export default defineConfig({
   plugins: [react()],
-  base: '/politikpulse/',
+  base: '/Politikumfrage-/',
 })
