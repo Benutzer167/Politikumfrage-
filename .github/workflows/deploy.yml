@@ -26,12 +26,14 @@ jobs:
         with:
           node-version: 20
       - run: npm install
+        working-directory: politikpulse
       - run: npm run build
+        working-directory: politikpulse
         env:
           VITE_APPS_SCRIPT_URL: ${{ secrets.VITE_APPS_SCRIPT_URL }}
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: politikpulse/dist
       - id: deployment
         uses: actions/deploy-pages@v4
