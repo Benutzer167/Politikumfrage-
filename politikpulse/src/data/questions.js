@@ -35,7 +35,6 @@ export const questions = [
       '4 – Stimme eher zu',
       '5 – Stimme voll und ganz zu',
     ],
-    // Für Likert: Wert ist der Skalenwert (1–5), nicht der Index
     likerMin: 1,
     likertMax: 5,
   },
@@ -50,6 +49,7 @@ export const questions = [
       'Erhöhung des Renteneintrittsalters',
       'Erhöhung der Rentenbeitragssätze',
       'Absenkung des Rentenniveaus',
+      'Einführung einer kapitalgedeckten Rente (z.B. ETF-Rente / Aktienrente)',
     ],
   },
   {
@@ -62,6 +62,7 @@ export const questions = [
     optionen: [
       'Maßnahmen zum Klimaschutz sollten auch dann priorisiert werden, wenn sie das Wirtschaftswachstum verlangsamen.',
       'Wirtschaftliche Stabilität sollte auch dann priorisiert werden, wenn dadurch die Umsetzung von Klimaschutzzielen verzögert wird.',
+      'Klimaschutz und Wirtschaftswachstum sollten gleichwertig und gemeinsam verfolgt werden.',
     ],
   },
   {
@@ -85,8 +86,9 @@ export const questions = [
     typ: 'nominal',
     text: 'Auf welchen Schwerpunkt sollte sich die deutsche Außen- und Sicherheitspolitik angesichts globaler Krisen primär konzentrieren?',
     optionen: [
-      'Ausbau militärischer Kapazitäten und Bündnisverteidigung',
-      'Ausbau diplomatischer Instrumente und zivile Krisenprävention',
+      'Vorrangig: Ausbau militärischer Kapazitäten und Bündnisverteidigung',
+      'Beides gleichwertig: Militärische und diplomatische Instrumente ausbauen',
+      'Vorrangig: Ausbau diplomatischer Instrumente und zivile Krisenprävention',
     ],
   },
   {
@@ -110,6 +112,7 @@ export const questions = [
     typ: 'nominal',
     text: 'Wenn am nächsten Sonntag Bundestagswahl wäre, welcher Partei würden Sie Ihre Zweitstimme geben?',
     optionen: [
+      // Große Parteien (0–6)
       'CDU / CSU',
       'SPD',
       'Bündnis 90 / Die Grünen',
@@ -117,10 +120,22 @@ export const questions = [
       'AfD',
       'Die Linke',
       'BSW (Bündnis Sahra Wagenknecht)',
-      'Eine andere Partei',
+      // Kleine Parteien (7–13) – werden kollabierbar angezeigt
+      'Freie Wähler',
+      'Volt Deutschland',
+      'Die PARTEI',
+      'Tierschutzpartei',
+      'ÖDP (Ökologisch-Demokratische Partei)',
+      'Piratenpartei',
+      'dieBasis',
+      // Sonstige / keine (14–16)
+      'Sonstige Kleinpartei (nicht gelistet)',
       'Ich bin unentschieden',
       'Ich würde nicht wählen / ungültig wählen',
     ],
+    // Indizes der kleinen Parteien (für kollabierbare Anzeige)
+    kleinParteienStart: 7,
+    kleinParteienEnd: 13,
   },
 ]
 
