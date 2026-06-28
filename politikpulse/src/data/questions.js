@@ -44,7 +44,7 @@ export const questions = [
     bereich: 'Struktur und Wandel der Gesellschaft',
     bereichKurz: 'Rentenversicherung',
     typ: 'nominal',
-    text: 'Welcher grundlegende steuernde Eingriff sollte prioritär gewählt werden, um die Finanzierbarkeit der gesetzlichen Rentenversicherung langfristig zu sichern?',
+   text: 'Wenn Sie sich für genau eine Maßnahme entscheiden müssten – welche sollte prioritär gewählt werden, um die Finanzierbarkeit der gesetzlichen Rentenversicherung langfristig zu sichern?',
     optionen: [
       'Erhöhung des Renteneintrittsalters',
       'Erhöhung der Rentenbeitragssätze',
